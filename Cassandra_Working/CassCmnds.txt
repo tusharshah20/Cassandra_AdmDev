@@ -1,0 +1,10 @@
+==========================================================================
+Working with NODETOOL
+nodetool status
+nodetool info
+nodetool ring
+nodetool describecluster
+nodetool gossipinfo
+nodetool gettimeout read
+nodetool gettimeout write
+nodetool version

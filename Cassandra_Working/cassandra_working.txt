@@ -214,4 +214,45 @@ Warnings :
 Aggregation query used without partition key
 
 cqlsh:killrvideo> exit;
+==============
+Another example:
+
+create keyspace Nprog with replication = {'class': 'SimpleStrategy','replication_factor':'1'};
+
+describe keyspaces;
+
+alter keyspace Nprog with replication = {'class': 'NetworkTopologyStrategy','replication_factor':'1'};
+
+drop keyspace Nprog;
+
+create table emp(
+emp_id int primary key,
+emp_name text,
+emp_city text,
+emp_sal varint,
+emp_phone varint);
+
+alter table emp add emp_mail text;
+
+alter table drop emp_sal;
+
+drop table emp;
+
+describe columnfamilies;
+
+#( deletes all rows of table)
+truncate emp;
+
+create index name on emp (emp_name);
+
+drop index name;
+
+#operations in batch
+begin batch
+insert into emp (emp_id,emp_name,emp_city,emp_sal,emp_phone) values 
+('10','aj','malmo','100','88776655');
+update emp set emp_sal = 5000 where emp_id = 10;
+delete emp_city from emp where emp_id = 2;
+apply batch;
+
 
