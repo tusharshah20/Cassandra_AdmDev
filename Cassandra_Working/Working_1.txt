@@ -1,0 +1,21 @@
+bin/cassandra (apache cassandra)
+bin/dse cassandra (in datastax)
+bin/dsetool status (in datastax)
+bin/nodetool status (apache cassandra)
+
+in cqlsh
+Create Keyspace KillrVideo 
+     with replication = {
+	'class' : 'SimpleStrategy',
+	'replication_factor': 1
+	};
+
+#to switch between keyspaces 
+use killrvideo;
+
+#above commands takes you within context of keyspace
+#this allows you to video tables, indexes, issue commands without need of setting keyspaces explicitly
+
+#to create a table
+
+
