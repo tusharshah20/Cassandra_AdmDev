@@ -1,3 +1,4 @@
+#to start
 bin/cassandra (apache cassandra)
 bin/dse cassandra (in datastax)
 bin/dsetool status (in datastax)
